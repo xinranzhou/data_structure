@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class LinkMap {
+    constructor() {
+        this.head = null;
+        this.length = 0;
+    }
+
+    push(val) {
+        if (this.head === null) {
+            this.head = {
+                value: val,
+                next: null,
+            };
+            this.length += 1;
+            return;
+        }
+        const last = this.findLastEle(this.head);
+        this.length += 1;
+        last.next = {
+            value: val,
+            next: null,
+        };
+        
+    }
+
+    findLastEle(current) {
+        if (current.next === null) {
+            return current;
+        }
+        return this.findLastEle(current.next);
+    }
+}
+
+const link = new LinkMap()
+link.push(1)
+link.push(2)
+link.push(3)
+link.push(4)
+link.push(5)
+link.push(6)
+link.push(7)
+console.log(link)
+
+const  linkHasCricle = (linkMap) => {
+    let fast = link.head;
+    let slow = link.head;
+    if (!fast) {
+        return false
+    }
+    const result = checkEqul(fast.next.next, slow)
+    console.log(result)
+}
+
+function  checkEqul(fast, slow) {
+    if (!fast || fast.next === null) {
+        return false;
+    }
+    if (fast.value === slow.value) {
+        return true;
+    }
+    return checkEqul(fast.next.next, slow.next)
+}
+
+linkHasCricle(link)
+
+    </script>
+</body>
+</html>
