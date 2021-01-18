@@ -1,0 +1,25 @@
+{
+  "name": "data_structure",
+  "version": "1.0.0",
+  "description": "数据结构与算法学习总计",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xinranzhou/data_structure.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xinranzhou/data_structure/issues"
+  },
+  "homepage": "https://github.com/xinranzhou/data_structure#readme",
+  "dependencies": {
+    "jest": "^27.0.0-next.1"
+  }
+}
